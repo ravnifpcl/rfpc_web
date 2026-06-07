@@ -1,0 +1,97 @@
+Created At: 2026-05-29T17:44:28Z
+Completed At: 2026-05-29T17:44:28Z
+File Path: `file:///c:/Users/sanke/Desktop/RFPC/script.js`
+Total Lines: 412
+Total Bytes: 15746
+Showing lines 1 to 412
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+1: /* ========================================
+2:    RAVNI FARMERS PRODUCER COMPANY LIMITED
+3:    Premium Website JavaScript
+4:    ======================================== */
+5: 
+6: document.addEventListener('DOMContentLoaded', () => {
+7:   // ──────────────────────────────────────
+8:   // PRELOADER
+9:   // ──────────────────────────────────────
+10:   const preloader = document.getElementById('preloader');
+11:   window.addEventListener('load', () => {
+12:     setTimeout(() => {
+13:       preloader.classList.add('hidden');
+14:       document.body.style.overflow = '';
+15:     }, 1200);
+16:   });
+17: 
+18:   // ──────────────────────────────────────
+19:   // NAVBAR SCROLL EFFECT
+20:   // ──────────────────────────────────────
+21:   const navbar = document.querySelector('.navbar');
+22:   const navLinks = document.querySelectorAll('.nav-links a:not(.nav-cta)');
+23:   const sections = document.querySelectorAll('section[id]');
+24: 
+25:   function handleNavScroll() {
+26:     if (window.scrollY > 60) {
+27:       navbar.classList.add('scrolled');
+28:     } else {
+29:       navbar.classList.remove('scrolled');
+30:     }
+31: 
+32:     // Active link highlighting
+33:     let current = '';
+34:     sections.forEach(section => {
+35:       const sectionTop = section.offsetTop - 120;
+36:       if (window.scrollY >=
+<truncated 14113 bytes>
+, () => {
+362:         const nextIndex = (index + 1) % galleryVideos.length;
+363:         galleryVideos.forEach(v => v.pause());
+364:         galleryVideos[nextIndex].play().catch(err => console.log('Sequential next play blocked:', err));
+365:       });
+366: 
+367:       // Pause other playing videos if user manually starts one
+368:       video.addEventListener('play', () => {
+369:         galleryVideos.forEach((v, i) => {
+370:           if (i !== index) {
+371:             v.pause();
+372:           }
+373:         });
+374:       });
+375:     });
+376:   }
+377: });
+378: 
+379: // ──────────────────────────────────────
+380: // GLOBAL LIGHTBOX FOR GALLERY
+381: // ──────────────────────────────────────
+382: window.openLightbox = function(card) {
+383:   const img = card.querySelector('img');
+384:   const lightboxImg = document.getElementById('lightbox-img');
+385:   const lightbox = document.getElementById('lightbox');
+386:   if (img && lightboxImg && lightbox) {
+387:     lightboxImg.src = img.src;
+388:     lightbox.classList.add('active');
+389:     document.body.style.overflow = 'hidden';
+390:   }
+391: };
+392: 
+393: window.closeLightbox = function(e) {
+394:   const lightbox = document.getElementById('lightbox');
+395:   if (lightbox) {
+396:     if (!e || e.target.id === 'lightbox' || e.target.classList.contains('lightbox-close')) {
+397:       lightbox.classList.remove('active');
+398:       document.body.style.overflow = '';
+399:     }
+400:   }
+401: };
+402: 
+403: document.addEventListener('keydown', (e) => {
+404:   if (e.key === 'Escape') {
+405:     const lightbox = document.getElementById('lightbox');
+406:     if (lightbox && lightbox.classList.contains('active')) {
+407:       lightbox.classList.remove('active');
+408:       document.body.style.overflow = '';
+409:     }
+410:   }
+411: });
+412: 
+The above content shows the entire, complete file contents of the requested file.
