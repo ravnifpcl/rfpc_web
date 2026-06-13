@@ -1,0 +1,26 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 *)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://127.0.0.1:8000/index.html)",
+      "Bash(grep *)",
+      "Bash(curl -s http://127.0.0.1:8000/style.css)",
+      "Bash(git config *)",
+      "Bash(gh auth *)",
+      "Bash(git init *)",
+      "Bash(git branch *)",
+      "Bash(git add *)",
+      "Bash(git rm *)",
+      "Bash(xargs -0 du -ch)",
+      "Bash(xargs -0 du -h)",
+      "Bash(gh repo *)",
+      "Bash(git remote *)",
+      "Bash(git fetch *)",
+      "Bash(git ls-tree *)",
+      "Bash(echo \"EXIT: $?\")",
+      "Bash(git checkout *)",
+      "Bash(git commit -q -m 'Add Terms & Privacy pages, fix mobile nav dropdown, full footer on legal pages *)",
+      "Bash(git merge *)"
+    ]
+  }
+}
